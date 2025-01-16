@@ -7,65 +7,66 @@
 
 void Ohajiki::Initialize()
 {
-    /// Šî’êƒNƒ‰ƒX‚Ì‰Šú‰»ˆ—
+    /// åŸºåº•ã‚¯ãƒ©ã‚¹ã®åˆæœŸåŒ–å‡¦ç†
     NimaFramework::Initialize();
 
-    /// ƒV[ƒ“ƒtƒ@ƒNƒgƒŠ‚ÌÝ’è
+    /// ã‚·ãƒ¼ãƒ³ãƒ•ã‚¡ã‚¯ãƒˆãƒªã®è¨­å®š
     pSceneFactory_ = new SceneFactory();
     pSceneManager_->SetSceneFactory(pSceneFactory_);
 
-    /// Ž©“®ƒ[ƒhƒpƒX‚Ì’Ç‰Á
+    /// è‡ªå‹•ãƒ­ãƒ¼ãƒ‰ãƒ‘ã‚¹ã®è¿½åŠ 
     pModelManager_->AddAutoLoadPath("resources/models");
+    pTextureManager_->AddSearchPath("resources/images");
 
-    /// ƒ‚ƒfƒ‹‚ð‘S‚Äƒ[ƒh
+    /// ãƒ¢ãƒ‡ãƒ«ã‚’å…¨ã¦ãƒ­ãƒ¼ãƒ‰
     pModelManager_->LoadAllModel();
 
-    /// ƒV[ƒ“‚Ì¶¬
-    pSceneManager_->ReserveScene("RequiredScene");
+    /// ã‚·ãƒ¼ãƒ³ã®ç”Ÿæˆ
+    pSceneManager_->ReserveScene("TitleScene");
 }
 
 void Ohajiki::Finalize()
 {
-    /// Šî’êƒNƒ‰ƒX‚ÌI—¹ˆ—
+    /// åŸºåº•ã‚¯ãƒ©ã‚¹ã®çµ‚äº†å‡¦ç†
     NimaFramework::Finalize();
 
     pSceneManager_->Finalize();
 
-    /// ƒV[ƒ“ƒtƒ@ƒNƒgƒŠ‚Ì‰ð•ú
+    /// ã‚·ãƒ¼ãƒ³ãƒ•ã‚¡ã‚¯ãƒˆãƒªã®è§£æ”¾
     delete pSceneFactory_;
 }
 
 void Ohajiki::Update()
 {
-    /// Šî’êƒNƒ‰ƒX‚ÌXVˆ—
+    /// åŸºåº•ã‚¯ãƒ©ã‚¹ã®æ›´æ–°å‡¦ç†
     NimaFramework::Update();
 
-    /// ƒV[ƒ“XV
+    /// ã‚·ãƒ¼ãƒ³æ›´æ–°
     pSceneManager_->Update();
 
-    /// ƒp[ƒeƒBƒNƒ‹XV
+    /// ãƒ‘ãƒ¼ãƒ†ã‚£ã‚¯ãƒ«æ›´æ–°
     pParticleManager_->Update();
 }
 
 void Ohajiki::Draw()
 {
-    /// •`‰æˆ—
+    /// æç”»å‡¦ç†
     pDirectX_->PresentDraw();
     pSRVManager_->PresentDraw();
 
-    /// ”wŒiƒXƒvƒ‰ƒCƒg‚Ì•`‰æ
+    /// èƒŒæ™¯ã‚¹ãƒ—ãƒ©ã‚¤ãƒˆã®æç”»
     pSpriteSystem_->PresentDraw();
     pSceneManager_->SceneDraw2dBackGround();
 
-    /// 3D•`‰æ
+    /// 3Dæç”»
     pObject3dSystem_->PresentDraw();
     pSceneManager_->SceneDraw3d();
 
-    /// ƒp[ƒeƒBƒNƒ‹•`‰æ
+    /// ãƒ‘ãƒ¼ãƒ†ã‚£ã‚¯ãƒ«æç”»
     pParticleSystem_->PresentDraw();
     pParticleManager_->Draw();
 
-    /// ‘OŒiƒXƒvƒ‰ƒCƒg‚Ì•`‰æ
+    /// å‰æ™¯ã‚¹ãƒ—ãƒ©ã‚¤ãƒˆã®æç”»
     pSpriteSystem_->PresentDraw();
     pSceneManager_->SceneDraw2dForeground();
 
