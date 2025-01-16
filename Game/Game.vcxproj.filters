@@ -1,22 +1,58 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="ソース ファイル">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <Filter Include="Ohajiki">
+      <UniqueIdentifier>{67b0da84-72d5-4eae-b740-e19d562f64fe}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ヘッダー ファイル">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    <Filter Include="Scene">
+      <UniqueIdentifier>{b65a144b-85bb-4daa-acec-80911759fdce}</UniqueIdentifier>
     </Filter>
-    <Filter Include="リソース ファイル">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="Scene\Factory">
+      <UniqueIdentifier>{e2a6b0ee-c263-421c-b2d4-b4c20d5c590c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Game">
+      <UniqueIdentifier>{8cf3b211-c39f-4c24-abb8-eccb1892f7f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Title">
+      <UniqueIdentifier>{72dd64f8-1ef0-4190-a2af-3fd119dc1343}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Clear">
+      <UniqueIdentifier>{49dce8ec-004c-46eb-8b9d-696525df8342}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="Ohajiki\Ohajiki.cpp">
+      <Filter>Ohajiki</Filter>
     </ClCompile>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Scene\Factory\SceneFactory.cpp">
+      <Filter>Scene\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\Clear\ClearScene.cpp">
+      <Filter>Scene\Clear</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\Game\GameScene.cpp">
+      <Filter>Scene\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\Title\TitleScene.cpp">
+      <Filter>Scene\Title</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Ohajiki\Ohajiki.h">
+      <Filter>Ohajiki</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Factory\SceneFactory.h">
+      <Filter>Scene\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Clear\ClearScene.h">
+      <Filter>Scene\Clear</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Game\GameScene.h">
+      <Filter>Scene\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Title\TitleScene.h">
+      <Filter>Scene\Title</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
