@@ -37,6 +37,13 @@
     <ClCompile Include="Scene\Title\TitleScene.cpp">
       <Filter>Scene\Title</Filter>
     </ClCompile>
+    <ClCompile Include="Skydome.cpp" />
+    <ClCompile Include="BasePlanet.cpp" />
+    <ClCompile Include="Solar.cpp" />
+    <ClCompile Include="Mercury.cpp" />
+    <ClCompile Include="Venus.cpp" />
+    <ClCompile Include="Mars.cpp" />
+    <ClCompile Include="Jupiter.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Ohajiki\Ohajiki.h">
@@ -54,5 +61,12 @@
     <ClInclude Include="Scene\Title\TitleScene.h">
       <Filter>Scene\Title</Filter>
     </ClInclude>
+    <ClInclude Include="Skydome.h" />
+    <ClInclude Include="BasePlanet.h" />
+    <ClInclude Include="Solar.h" />
+    <ClInclude Include="Mercury.h" />
+    <ClInclude Include="Venus.h" />
+    <ClInclude Include="Mars.h" />
+    <ClInclude Include="Jupiter.h" />
   </ItemGroup>
 </Project>

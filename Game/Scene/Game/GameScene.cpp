@@ -1,5 +1,6 @@
 #include "GameScene.h"
 #include <Features/SceneTransition/TransFadeInOut.h>
+#include <Features/Object3d/Object3dSystem.h>
 #include <Core/Win32/WinSystem.h>
 
 void GameScene::Initialize()
@@ -11,18 +12,50 @@ void GameScene::Initialize()
     /// ゲームアイの初期化
     gameEye_ = std::make_unique<GameEye>();
     gameEye_->SetName("main");
-    gameEye_->SetTranslate(Vector3(0, 15.0f, -30.0f));
-    gameEye_->SetRotate(Vector3(-1.2f, 0, 0));
+    gameEye_->SetTranslate(Vector3(0, 21.73f, -44.78f));
+    gameEye_->SetRotate(Vector3(0.37f, 0, 0));
+
+    //システムにデフォルトのカメラを登録
+    Object3dSystem::GetInstance()->SetDefaultGameEye(gameEye_.get());
+
+    //オブジェクトの初期化
+    skydome_ = std::make_unique<Skydome>();
+    skydome_->Initialize();
+    solar_ = std::make_unique<Solar>();
+    solar_->Initialize();
+    mercury_ = std::make_unique<Mercury>();
+    mercury_->Initialize();
+    venus_ = std::make_unique<Venus>();
+    venus_->Initialize();
+    mars_ = std::make_unique<Mars>();
+    mars_->Initialize();
+    jupiter_ = std::make_unique<Jupiter>();
+    jupiter_->Initialize();
+
 }
 
 void GameScene::Finalize()
 {
     gameEye_.reset();
+    solar_->Finalize();
+    mercury_->Finalize();
+    venus_->Finalize();
+    mars_->Finalize();
+    jupiter_->Finalize();
 }
 
 void GameScene::Update()
 {
     gameEye_->Update();
+
+    //オブジェクトの更新
+    skydome_->Update();
+    solar_->Update();
+    mercury_->Update();
+    venus_->Update();
+    mars_->Update();
+    jupiter_->Update();
+
 
     if (pInput_->TriggerKey(DIK_SPACE))
     {
@@ -36,6 +69,13 @@ void GameScene::Draw2dBackGround()
 
 void GameScene::Draw3d()
 {
+    //オブジェクトの描画
+    skydome_->Draw();
+    solar_->Draw();
+    mercury_->Draw();
+    venus_->Draw();
+    mars_->Draw();
+    jupiter_->Draw();
 }
 
 void GameScene::Draw2dMidground()

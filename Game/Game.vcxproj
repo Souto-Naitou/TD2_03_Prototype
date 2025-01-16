@@ -161,19 +161,33 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BasePlanet.cpp" />
+    <ClCompile Include="Jupiter.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Mars.cpp" />
+    <ClCompile Include="Mercury.cpp" />
     <ClCompile Include="Ohajiki\Ohajiki.cpp" />
     <ClCompile Include="Scene\Clear\ClearScene.cpp" />
     <ClCompile Include="Scene\Factory\SceneFactory.cpp" />
     <ClCompile Include="Scene\Game\GameScene.cpp" />
     <ClCompile Include="Scene\Title\TitleScene.cpp" />
+    <ClCompile Include="Skydome.cpp" />
+    <ClCompile Include="Solar.cpp" />
+    <ClCompile Include="Venus.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BasePlanet.h" />
+    <ClInclude Include="Jupiter.h" />
+    <ClInclude Include="Mars.h" />
+    <ClInclude Include="Mercury.h" />
     <ClInclude Include="Ohajiki\Ohajiki.h" />
     <ClInclude Include="Scene\Clear\ClearScene.h" />
     <ClInclude Include="Scene\Factory\SceneFactory.h" />
     <ClInclude Include="Scene\Game\GameScene.h" />
     <ClInclude Include="Scene\Title\TitleScene.h" />
+    <ClInclude Include="Skydome.h" />
+    <ClInclude Include="Solar.h" />
+    <ClInclude Include="Venus.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
