@@ -114,6 +114,10 @@
       <AdditionalLibraryDirectories>$(ProjectDir)..\Externals\GEDX12\Engine\Externals;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>JsonParser/$(Configuration)/JsonParser.lib;Network/$(Configuration)/Network.lib;WinTools/$(Configuration)/WinTools.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxcompiler.dll" "$(TargetDir)dxcompiler.dll"
+copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dxil.dll"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -135,6 +139,10 @@
       <AdditionalLibraryDirectories>$(ProjectDir)..\Externals\GEDX12\Engine\Externals;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>JsonParser/$(Configuration)/JsonParser.lib;Network/$(Configuration)/Network.lib;WinTools/$(Configuration)/WinTools.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxcompiler.dll" "$(TargetDir)dxcompiler.dll"
+copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dxil.dll"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ProjectReference Include="..\Externals\GEDX12\Engine\Engine.vcxproj">
