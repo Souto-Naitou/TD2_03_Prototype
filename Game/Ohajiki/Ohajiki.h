@@ -6,28 +6,28 @@ class Ohajiki : public NimaFramework
 {
 public:
     /// <summary>
-    /// ‰Šú‰»
+    /// åˆæœŸåŒ–
     /// </summary>
     void Initialize() override;
 
     /// <summary>
-    /// I—¹
+    /// çµ‚äº†
     /// </summary>
     void Finalize() override;
 
     /// <summary>
-    /// XV
+    /// æ›´æ–°
     /// </summary>
     void Update() override;
 
     /// <summary>
-    /// •`‰æ
+    /// æç”»
     /// </summary>
     void Draw() override;
 
     bool IsExitProgram() { return isExitProgram_; }
 
 
-private: /// ƒQ[ƒ€“àƒIƒuƒWƒFƒNƒg
+private: /// ã‚²ãƒ¼ãƒ å†…ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 
 };
