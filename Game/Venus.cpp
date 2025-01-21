@@ -8,6 +8,7 @@ void Venus::Initialize()
 	model_->SetName("Venus");
 	//座標の変更
 	model_->SetTranslate({ -7.0f,-7.0f,7.0f });
+	
 }
 
 void Venus::Update()

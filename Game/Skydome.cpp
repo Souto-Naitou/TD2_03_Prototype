@@ -11,7 +11,7 @@ void Skydome::Initialize()
 	//モデルの生成と初期化
 	model_ = std::make_unique<Object3d>();
 	model_->Initialize("skydome.obj");
-	model_->SetScale({ 1.0f,1.0f,1.0f });
+	model_->SetScale({ 3.0f,3.0f,3.0f });
 	model_->SetName("Skydome");
 	model_->SetEnableLighting(false);
 }

@@ -1,5 +1,6 @@
 #pragma once
 #include <Features/Object3d/Object3d.h>
+#include "Features/GameEye/GameEye.h"
 #include <memory>
 
 class BasePlanet
@@ -17,11 +18,16 @@ public:
 	/// 終了
 	virtual void Finalize();
 
+	//カメラのセット
+	virtual void SetEye(GameEye* eye) { model_->SetGameEye(eye); }
+
 protected:
 	//モデル
 	std::unique_ptr<Object3d> model_ = nullptr;
 	//半径
 	float radius_ = 0.0f;
+	//速度
+	Vector3 velocity_ = { 0.0f,0.0f };
 
 };
 

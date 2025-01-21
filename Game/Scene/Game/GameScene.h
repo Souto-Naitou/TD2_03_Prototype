@@ -10,6 +10,8 @@
 #include "Venus.h"
 #include "Mars.h"
 #include "Jupiter.h"
+#include "Saturn.h"
+#include <array>
 #include <memory>
 
 class GameScene : public IScene
@@ -62,8 +64,11 @@ public:
 
 
 private:
-	std::unique_ptr<GameEye>                    gameEye_ = {};           // !< ゲームアイ
+	std::unique_ptr<GameEye>                    debugEye_ = {};           // !< デバッグアイ
+	std::unique_ptr<GameEye>                    gameEye_ = {};			   // !< ゲームアイ
 
+	std::vector<GameEye> eyeArray_;
+	int eyeNumber_ = 0;
 
 private:
 	Input* pInput_ = nullptr;      // !< 入力
@@ -83,6 +88,6 @@ private: /// オブジェクト
 	//木星
 	std::unique_ptr<Jupiter> jupiter_ = nullptr;
 	//土星
-
+	std::unique_ptr<Saturn> saturn_ = nullptr;
 
 };
