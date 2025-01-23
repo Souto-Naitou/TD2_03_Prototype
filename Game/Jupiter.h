@@ -11,6 +11,5 @@ public:
 	void Draw() override;
 	//終了
 	void Finalize() override;
-
 };
 

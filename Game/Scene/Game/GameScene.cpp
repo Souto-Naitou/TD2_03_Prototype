@@ -8,7 +8,7 @@ void GameScene::Initialize()
 	/// インスタンスの取得
 	pInput_ = Input::GetInstance();
 	pSceneTransition_ = SceneTransitionManager::GetInstance();
-
+	
 	/// アイの初期化
 	debugEye_ = std::make_unique<GameEye>();
 	debugEye_->SetName("debug");
@@ -38,6 +38,7 @@ void GameScene::Initialize()
 	jupiter_->Initialize();
 	saturn_ = std::make_unique<Saturn>();
 	saturn_->Initialize();
+
 }
 
 void GameScene::Finalize()
@@ -69,7 +70,20 @@ void GameScene::Update()
 	{
 		pSceneTransition_->ChangeScene("ClearScene", std::make_unique<TransFadeInOut>());
 	}
-	
+
+#ifdef _DEBUG
+	if (pInput_->TriggerKey(DIK_TAB)) {
+		//すべてのオブジェクトをgame用に再登録 ※切り替えは今は未実装
+		skydome_->SetEye(gameEye_.get());
+		solar_->SetEye(gameEye_.get());
+		mercury_->SetEye(gameEye_.get());
+		venus_->SetEye(gameEye_.get());
+		mars_->SetEye(gameEye_.get());
+		jupiter_->SetEye(gameEye_.get());
+		saturn_->SetEye(gameEye_.get());
+
+	}
+#endif // _DEBUG
 }
 
 void GameScene::Draw2dBackGround()

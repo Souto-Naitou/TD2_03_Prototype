@@ -19,7 +19,7 @@ public:
 	virtual void Finalize();
 
 	//カメラのセット
-	virtual void SetEye(GameEye* eye) { model_->SetGameEye(eye); }
+	void SetEye(GameEye* eye) { model_->SetGameEye(eye); }
 
 protected:
 	//モデル
