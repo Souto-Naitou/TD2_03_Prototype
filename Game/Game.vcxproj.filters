@@ -68,7 +68,9 @@
     <ClCompile Include="Venus.cpp">
       <Filter>GameObject\Planet</Filter>
     </ClCompile>
-    <ClCompile Include="Earth.cpp" />
+    <ClCompile Include="Earth.cpp">
+      <Filter>GameObject\Player</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Ohajiki\Ohajiki.h">
@@ -108,6 +110,8 @@
     <ClInclude Include="Venus.h">
       <Filter>GameObject\Planet</Filter>
     </ClInclude>
-    <ClInclude Include="Earth.h" />
+    <ClInclude Include="Earth.h">
+      <Filter>GameObject\Player</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

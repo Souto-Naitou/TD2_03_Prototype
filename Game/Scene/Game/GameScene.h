@@ -4,13 +4,13 @@
 #include <Features/GameEye/GameEye.h>
 #include <Features/Input/Input.h>
 #include <Features/SceneTransition/SceneTransitionManager.h>
-#include "Skydome.h"
-#include "Solar.h"
-#include "Mercury.h"
-#include "Venus.h"
-#include "Mars.h"
-#include "Jupiter.h"
-#include "Saturn.h"
+#include <Skydome.h>
+#include <Solar.h>
+#include <Mercury.h>
+#include <Venus.h>
+#include <Mars.h>
+#include <Jupiter.h>
+#include <Saturn.h>
 #include <array>
 #include <memory>
 
@@ -65,11 +65,9 @@ public:
 
 private:
 	std::unique_ptr<GameEye>                    debugEye_ = {};           // !< デバッグアイ
-	std::unique_ptr<GameEye>                    gameEye_ = {};			   // !< ゲームアイ
 
-	std::vector<GameEye> eyeArray_;
-	int eyeNumber_ = 0;
-
+	std::unique_ptr<GameEye> gameEye_ = {}; // !< ゲームカメラ
+	
 private:
 	Input* pInput_ = nullptr;      // !< 入力
 	SceneTransitionManager* pSceneTransition_ = nullptr;      // !< シーン遷移

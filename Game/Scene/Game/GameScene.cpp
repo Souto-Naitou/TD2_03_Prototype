@@ -9,7 +9,7 @@ void GameScene::Initialize()
 	pInput_ = Input::GetInstance();
 	pSceneTransition_ = SceneTransitionManager::GetInstance();
 
-	/// ゲームアイの初期化
+	/// アイの初期化
 	debugEye_ = std::make_unique<GameEye>();
 	debugEye_->SetName("debug");
 	debugEye_->SetTranslate(Vector3(0, 39.19f, -97.0f));
@@ -17,14 +17,10 @@ void GameScene::Initialize()
 
 	gameEye_ = std::make_unique<GameEye>();
 	gameEye_->SetName("game");
-	gameEye_->SetTranslate(Vector3(0, 0, 0));
-	gameEye_->SetRotate(Vector3(0, 0, 0));
-
-	//配列に登録
-	eyeArray_.push_back(*debugEye_.get());
-	eyeArray_.push_back(*gameEye_.get());
-
-	//システムにカメラ配列の0番目を登録
+	gameEye_->SetTranslate(Vector3(0,0,0));
+	gameEye_->SetRotate(Vector3(0,0,0));
+	
+	//システムにカメラを登録
 	Object3dSystem::GetInstance()->SetDefaultGameEye(debugEye_.get());
 
 	//オブジェクトの初期化
@@ -58,28 +54,8 @@ void GameScene::Finalize()
 
 void GameScene::Update()
 {
-#ifdef _DEBUG
-	////カメラの切り替え
-	//if (pInput_->TriggerKey(DIK_TAB)) {
-	//	eyeNumber_++;
-	//	if (eyeNumber_ >= eyeArray_.size()) {
-	//		eyeNumber_ = 0;
-	//	}
-	//	//既存のすべてのオブジェクトに反映
-	//	skydome_->SetEye(&eyeArray_[eyeNumber_]);
-	//	solar_->SetEye(&eyeArray_[eyeNumber_]);
-	//	mercury_->SetEye(&eyeArray_[eyeNumber_]);
-	//	venus_->SetEye(&eyeArray_[eyeNumber_]);
-	//	mars_->SetEye(&eyeArray_[eyeNumber_]);
-	//	jupiter_->SetEye(&eyeArray_[eyeNumber_]);
-	//	saturn_->SetEye(&eyeArray_[eyeNumber_]);
-
-	//}
-#endif // _DEBUG
-
 	debugEye_->Update();
 	gameEye_->Update();
-
 	//オブジェクトの更新
 	skydome_->Update();
 	solar_->Update();
@@ -89,11 +65,11 @@ void GameScene::Update()
 	jupiter_->Update();
 	saturn_->Update();
 
-
 	if (pInput_->TriggerKey(DIK_SPACE))
 	{
 		pSceneTransition_->ChangeScene("ClearScene", std::make_unique<TransFadeInOut>());
 	}
+	
 }
 
 void GameScene::Draw2dBackGround()
