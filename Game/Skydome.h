@@ -5,11 +5,10 @@
 class Skydome
 {
 public:
-	~Skydome();
-
 	void Initialize();
 	void Update();
 	void Draw();
+	void Finalize();
 
 	//カメラのセット
 	void SetEye(GameEye* eye) { model_->SetGameEye(eye); }

@@ -67,7 +67,9 @@ private:
 	std::unique_ptr<GameEye>                    debugEye_ = {};           // !< デバッグアイ
 
 	std::unique_ptr<GameEye> gameEye_ = {}; // !< ゲームカメラ
-	
+	int eyeNumber = 0;
+
+
 private:
 	Input* pInput_ = nullptr;      // !< 入力
 	SceneTransitionManager* pSceneTransition_ = nullptr;      // !< シーン遷移

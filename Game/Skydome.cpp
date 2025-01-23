@@ -1,11 +1,5 @@
 #include "Skydome.h"
 
-Skydome::~Skydome()
-{
-	//終了処理
-	model_->Finalize();
-}
-
 void Skydome::Initialize()
 {
 	//モデルの生成と初期化
@@ -26,6 +20,12 @@ void Skydome::Draw()
 {
 	//描画処理
 	model_->Draw();
+}
+
+void Skydome::Finalize()
+{
+	//終了処理
+	model_->Finalize();
 }
 
 
