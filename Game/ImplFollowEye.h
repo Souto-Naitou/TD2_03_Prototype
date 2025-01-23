@@ -22,7 +22,7 @@ private:
 	//カメラとプレイヤーの距離
 	float distance_ = 20.0f;
 	//角度
-	float theta_ = 0.0f;
+	Vector2 theta_ = {};
 	//回転の速さ
 	float rotateSpeed_ = 0.0f;
 
