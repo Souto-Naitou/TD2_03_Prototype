@@ -2,12 +2,15 @@
 #include <Features/SceneTransition/TransFadeInOut.h>
 #include <Features/Object3d/Object3dSystem.h>
 #include <Core/Win32/WinSystem.h>
+#include <Features/DeltaTimeManager/DeltaTimeManager.h>
 
 void GameScene::Initialize()
 {
 	/// インスタンスの取得
 	pInput_ = Input::GetInstance();
 	pSceneTransition_ = SceneTransitionManager::GetInstance();
+
+	DeltaTimeManager::GetInstance()->SetDeltaTime(0, 1.0f / 60.0f);
 
 	/// アイの初期化
 	debugEye_ = std::make_unique<GameEye>();
@@ -19,6 +22,11 @@ void GameScene::Initialize()
 	gameEye_->SetName("game");
 	gameEye_->SetTranslate(Vector3(0, 0, 0));
 	gameEye_->SetRotate(Vector3(0, 0, 0));
+
+	implFollowEye_ = std::make_unique<ImplFollowEye>();
+	implFollowEye_->Initialize();
+	//カメラ処理にゲームアイを登録
+	implFollowEye_->SetEye(gameEye_.get());
 
 	//システムにカメラを登録
 	Object3dSystem::GetInstance()->SetSharedGameEye(debugEye_.get());
@@ -38,6 +46,11 @@ void GameScene::Initialize()
 	jupiter_->Initialize();
 	saturn_ = std::make_unique<Saturn>();
 	saturn_->Initialize();
+	//プレイヤー(地球)
+	earth_ = std::make_unique<Earth>();
+	earth_->Initialize();
+
+
 
 }
 
@@ -51,6 +64,7 @@ void GameScene::Finalize()
 	mars_->Finalize();
 	jupiter_->Finalize();
 	saturn_->Finalize();
+	earth_->Finalize();
 	skydome_->Finalize();
 }
 
@@ -58,6 +72,7 @@ void GameScene::Update()
 {
 	debugEye_->Update();
 	gameEye_->Update();
+	implFollowEye_->Update(earth_->GetWorldTranslate());
 	//オブジェクトの更新
 	skydome_->Update();
 	solar_->Update();
@@ -66,6 +81,7 @@ void GameScene::Update()
 	mars_->Update();
 	jupiter_->Update();
 	saturn_->Update();
+	earth_->Update();
 
 	if (pInput_->TriggerKey(DIK_SPACE))
 	{
@@ -107,6 +123,7 @@ void GameScene::Draw3d()
 	mars_->Draw();
 	jupiter_->Draw();
 	saturn_->Draw();
+	earth_->Draw();
 }
 
 void GameScene::Draw2dMidground()

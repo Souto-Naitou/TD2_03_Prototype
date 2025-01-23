@@ -12,5 +12,8 @@ public:
 	//終了
 	void Finalize() override;
 
+	//getter
+	const Vector3& GetWorldTranslate() { return model_->GetTranslate(); }
+
 };
 

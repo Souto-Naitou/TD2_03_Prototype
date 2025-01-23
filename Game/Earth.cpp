@@ -5,8 +5,8 @@ void Earth::Initialize()
 	//ベースの初期化
 	BasePlanet::Initialize();
 	//名前の変更
-	model_->SetName("Solar");
-	model_->SetScale({ 2.0f,2.0f,2.0f });
+	model_->SetName("Earth");
+	model_->SetScale({ 1.0f,1.0f,1.0f });
 	//速度０に
 	velocity_ = { 0.0f,0.0f,0.0f };
 }

@@ -11,6 +11,8 @@
 #include <Mars.h>
 #include <Jupiter.h>
 #include <Saturn.h>
+#include <Earth.h>
+#include <ImplFollowEye.h>
 #include <array>
 #include <memory>
 
@@ -69,6 +71,9 @@ private:
 	std::unique_ptr<GameEye> gameEye_ = {}; // !< ゲームカメラ
 	int eyeNumber = 0;
 
+	//ゲームアイの処理
+	std::unique_ptr<ImplFollowEye> implFollowEye_ = nullptr;
+
 
 private:
 	Input* pInput_ = nullptr;      // !< 入力
@@ -89,5 +94,7 @@ private: /// オブジェクト
 	std::unique_ptr<Jupiter> jupiter_ = nullptr;
 	//土星
 	std::unique_ptr<Saturn> saturn_ = nullptr;
+	//地球
+	std::unique_ptr<Earth> earth_ = nullptr;
 
 };
