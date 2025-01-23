@@ -1,4 +1,5 @@
 #pragma once
+#include <Features/Input/Input.h>
 #include "BasePlanet.h"
 class Earth : public BasePlanet
 {
@@ -14,6 +15,16 @@ public:
 
 	//getter
 	const Vector3& GetWorldTranslate() { return model_->GetTranslate(); }
+
+	//setter
+	//Vector3 SetEyeDirection
+
+private:
+	//インプット
+	Input* pInput_ = nullptr;
+	//カメラの向き
+	Vector3 eyeDirection_ = {};
+	//
 
 };
 

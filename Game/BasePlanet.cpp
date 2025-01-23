@@ -26,8 +26,9 @@ void BasePlanet::Update()
 	model_->Update();
 
 	//速度の加算処理
+	velocity_ += acceleration_ * DeltaTimeManager::GetInstance()->GetDeltaTime(0);
 	Vector3 position = model_->GetTranslate();
-	position += velocity_;
+	position += velocity_ * DeltaTimeManager::GetInstance()->GetDeltaTime(0);
 	model_->SetTranslate(position);
 
 	//見えない壁との衝突処理
@@ -41,6 +42,8 @@ void BasePlanet::Update()
 		velocity_.z *= -1.0f;
 	}
 
+	//加速度のリセット
+	acceleration_ = {};
 }
 
 void BasePlanet::Draw()

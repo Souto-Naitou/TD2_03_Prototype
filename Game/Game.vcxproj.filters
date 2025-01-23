@@ -72,6 +72,7 @@
       <Filter>GameObject\Player</Filter>
     </ClCompile>
     <ClCompile Include="ImplFollowEye.cpp" />
+    <ClCompile Include="Player.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Ohajiki\Ohajiki.h">
@@ -115,5 +116,6 @@
       <Filter>GameObject\Player</Filter>
     </ClInclude>
     <ClInclude Include="ImplFollowEye.h" />
+    <ClInclude Include="Player.h" />
   </ItemGroup>
 </Project>

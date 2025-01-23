@@ -1,6 +1,7 @@
 #pragma once
 #include <Features/Object3d/Object3d.h>
-#include "Features/GameEye/GameEye.h"
+#include <Features/GameEye/GameEye.h>
+#include <Features/DeltaTimeManager/DeltaTimeManager.h>
 #include <memory>
 
 class BasePlanet
@@ -27,7 +28,9 @@ protected:
 	//半径
 	float radius_ = 0.0f;
 	//速度
-	Vector3 velocity_ = { 0.0f,0.0f };
+	Vector3 velocity_ = {};
+	//加速度
+	Vector3 acceleration_ = {};
 
 };
 

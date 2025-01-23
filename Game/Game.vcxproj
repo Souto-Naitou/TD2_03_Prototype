@@ -169,6 +169,7 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClCompile Include="Mars.cpp" />
     <ClCompile Include="Mercury.cpp" />
     <ClCompile Include="Ohajiki\Ohajiki.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="Saturn.cpp" />
     <ClCompile Include="Scene\Clear\ClearScene.cpp" />
     <ClCompile Include="Scene\Factory\SceneFactory.cpp" />
@@ -186,6 +187,7 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClInclude Include="Mars.h" />
     <ClInclude Include="Mercury.h" />
     <ClInclude Include="Ohajiki\Ohajiki.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="Saturn.h" />
     <ClInclude Include="Scene\Clear\ClearScene.h" />
     <ClInclude Include="Scene\Factory\SceneFactory.h" />

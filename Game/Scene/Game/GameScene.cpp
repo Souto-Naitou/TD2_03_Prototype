@@ -22,6 +22,7 @@ void GameScene::Initialize()
 	gameEye_->SetName("game");
 	gameEye_->SetTranslate(Vector3(0, 0, 0));
 	gameEye_->SetRotate(Vector3(0, 0, 0));
+	
 
 	implFollowEye_ = std::make_unique<ImplFollowEye>();
 	implFollowEye_->Initialize();

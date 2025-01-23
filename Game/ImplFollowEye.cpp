@@ -39,17 +39,24 @@ void ImplFollowEye::Update(const Vector3& translate)
 	Vector3 rotate = {};
 	rotate.x = theta_.x;
 	rotate.y = theta_.y;
+
 	//回転行列を作成
 	Vector3 base = { 0,0,1 };
 	Matrix4x4 rotateMatrix = Matrix4x4::RotateXMatrix(rotate.x) * Matrix4x4::RotateYMatrix(rotate.y) * Matrix4x4::RotateZMatrix(rotate.z);
+	
 	//向きを求める
 	Vector3 direction = FMath::Transform(base, rotateMatrix);
-	//座標を求める
-	Vector3 eyePosition = -direction.Normalize() * distance_;
+	
+	Vector3 targetPosition = {};
+	targetPosition.Lerp(oldTargetPosition_, translate, 0.05f);
 
+	//座標を求める
+	Vector3 eyePosition = -direction.Normalize() * distance_ + targetPosition;
 	
 
 	/// カメラに座標をセット
 	eye_->SetRotate(rotate);
 	eye_->SetTranslate(eyePosition);
+
+	oldTargetPosition_ = targetPosition;
 }
