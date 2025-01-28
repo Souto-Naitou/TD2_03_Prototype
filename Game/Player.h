@@ -22,7 +22,11 @@ private:
 	std::unique_ptr<ImplFollowEye> implFollowEye_ = nullptr;
 	Earth* earth_ = nullptr;
 
-
+private:
+	//速度
+	Vector3 velocity_;
+	//スピード
+	float speed_ = 10.0f;
 
 
 };

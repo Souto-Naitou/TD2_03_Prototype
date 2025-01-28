@@ -8,7 +8,7 @@ void ImplFollowEye::Initialize()
 	//インプット
 	pInput_ = Input::GetInstance();
 	//変数
-	rotateSpeed_ = (30.0f / 360.0f) * pi_ * DeltaTimeManager::GetInstance()->GetDeltaTime(0);
+	rotateSpeed_ = (90.0f / 360.0f) * pi_ * DeltaTimeManager::GetInstance()->GetDeltaTime(0);
 }
 
 void ImplFollowEye::Update(const Vector3& translate)
@@ -20,16 +20,16 @@ void ImplFollowEye::Update(const Vector3& translate)
 
 	//カメラ操作
 	if (pInput_->PushKey(DIK_UP)) {
-		theta_.x += rotateSpeed_;
-	}
-	if (pInput_->PushKey(DIK_DOWN)) {
 		theta_.x -= rotateSpeed_;
 	}
+	if (pInput_->PushKey(DIK_DOWN)) {
+		theta_.x += rotateSpeed_;
+	}
 	if (pInput_->PushKey(DIK_RIGHT)) {
-		theta_.y -= rotateSpeed_;
+		theta_.y += rotateSpeed_;
 	}
 	if (pInput_->PushKey(DIK_LEFT)) {
-		theta_.y += rotateSpeed_;
+		theta_.y -= rotateSpeed_;
 	}
 
 	//クランプ
@@ -45,13 +45,13 @@ void ImplFollowEye::Update(const Vector3& translate)
 	Matrix4x4 rotateMatrix = Matrix4x4::RotateXMatrix(rotate.x) * Matrix4x4::RotateYMatrix(rotate.y) * Matrix4x4::RotateZMatrix(rotate.z);
 	
 	//向きを求める
-	Vector3 direction = FMath::Transform(base, rotateMatrix);
+	direction_ = FMath::Transform(base, rotateMatrix);
 	
 	Vector3 targetPosition = {};
 	targetPosition.Lerp(oldTargetPosition_, translate, 0.05f);
 
 	//座標を求める
-	Vector3 eyePosition = -direction.Normalize() * distance_ + targetPosition;
+	Vector3 eyePosition = -direction_.Normalize() * distance_ + targetPosition;
 	
 
 	/// カメラに座標をセット

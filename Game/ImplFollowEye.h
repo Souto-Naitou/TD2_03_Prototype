@@ -12,6 +12,10 @@ public:
 	//setter
 	void SetEye(GameEye* eye) { eye_ = eye; }
 
+	//getter
+	const GameEye* GetEye() { return eye_; }
+	const Vector3& GetDirection() { return direction_; }
+
 private:
 	//入力
 	Input* pInput_ = nullptr;
@@ -26,6 +30,8 @@ private:
 	Vector2 theta_ = {};
 	//回転の速さ
 	float rotateSpeed_ = 0.0f;
+	//カメラの向き
+	Vector3 direction_ = {};
 
 	Vector3 oldTargetPosition_ = {};
 };

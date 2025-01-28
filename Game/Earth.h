@@ -17,7 +17,7 @@ public:
 	const Vector3& GetWorldTranslate() { return model_->GetTranslate(); }
 
 	//setter
-	//Vector3 SetEyeDirection
+	void SetVelocity(const Vector3& _velocity) { velocity_ = _velocity; }
 
 private:
 	//インプット

@@ -23,12 +23,6 @@ void GameScene::Initialize()
 	gameEye_->SetTranslate(Vector3(0, 0, 0));
 	gameEye_->SetRotate(Vector3(0, 0, 0));
 	
-
-	implFollowEye_ = std::make_unique<ImplFollowEye>();
-	implFollowEye_->Initialize();
-	//カメラ処理にゲームアイを登録
-	implFollowEye_->SetEye(gameEye_.get());
-
 	//システムにカメラを登録
 	Object3dSystem::GetInstance()->SetSharedGameEye(debugEye_.get());
 
@@ -47,9 +41,13 @@ void GameScene::Initialize()
 	jupiter_->Initialize();
 	saturn_ = std::make_unique<Saturn>();
 	saturn_->Initialize();
-	//プレイヤー(地球)
 	earth_ = std::make_unique<Earth>();
 	earth_->Initialize();
+	//プレイヤー
+	player_ = std::make_unique<Player>();
+	player_->Initialize();
+	player_->SetEye(gameEye_.get());
+	player_->SetEarth(earth_.get());
 
 
 
@@ -73,7 +71,6 @@ void GameScene::Update()
 {
 	debugEye_->Update();
 	gameEye_->Update();
-	implFollowEye_->Update(earth_->GetWorldTranslate());
 	//オブジェクトの更新
 	skydome_->Update();
 	solar_->Update();
@@ -83,6 +80,8 @@ void GameScene::Update()
 	jupiter_->Update();
 	saturn_->Update();
 	earth_->Update();
+	//プレイヤーの更新
+	player_->Update();
 
 	if (pInput_->TriggerKey(DIK_SPACE))
 	{
