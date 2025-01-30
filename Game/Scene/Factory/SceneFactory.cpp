@@ -6,7 +6,7 @@
 
 #include <cassert>
 
-#define JUDGE_SCENE_NAME(_scName) if (_sceneName == #_scName) pNewScene = new _scName();
+#define JUDGE_SCENE_NAME(class) if (_sceneName == #class) pNewScene = new class();
 
 IScene* SceneFactory::CreateScene(const std::string& _sceneName)
 {
