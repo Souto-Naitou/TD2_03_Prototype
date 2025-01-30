@@ -1,31 +1,31 @@
-#include "Mercury.h"
+#include "Earth.h"
 
-void Mercury::Initialize()
+void Earth::Initialize()
 {
 	//ベースの初期化
 	BasePlanet::Initialize();
 	//名前の変更
-	model_->SetName("Mercury");
-	//座標の変更
-	model_->SetTranslate({ 5.0f,5.0f,5.0f });
-	
+	model_->SetName("Earth");
+	model_->SetScale({ 1.0f,1.0f,1.0f });
+	//速度０に
+	velocity_ = { 0.0f,0.0f,0.0f };
 }
 
-void Mercury::Update()
+void Earth::Update()
 {
 	//ベースの更新
 	BasePlanet::Update();
 
 }
 
-void Mercury::Draw()
+void Earth::Draw()
 {
 	//ベースの描画
 	BasePlanet::Draw();
 
 }
 
-void Mercury::Finalize()
+void Earth::Finalize()
 {
 	//ベースの終了
 	BasePlanet::Finalize();

@@ -7,6 +7,8 @@ void Solar::Initialize()
 	//名前の変更
 	model_->SetName("Solar");
 	model_->SetScale({ 2.0f,2.0f,2.0f });
+	//速度０に
+	velocity_ = { 0.0f,0.0f,0.0f };
 }
 
 void Solar::Update()

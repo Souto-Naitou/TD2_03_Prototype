@@ -4,12 +4,17 @@
 #include <Features/GameEye/GameEye.h>
 #include <Features/Input/Input.h>
 #include <Features/SceneTransition/SceneTransitionManager.h>
-#include "Skydome.h"
-#include "Solar.h"
-#include "Mercury.h"
-#include "Venus.h"
-#include "Mars.h"
-#include "Jupiter.h"
+#include <Skydome.h>
+#include <Solar.h>
+#include <Mercury.h>
+#include <Venus.h>
+#include <Mars.h>
+#include <Jupiter.h>
+#include <Saturn.h>
+#include <Earth.h>
+#include <Player.h>
+#include <ImplFollowEye.h>
+#include <array>
 #include <memory>
 
 class GameScene : public IScene
@@ -62,8 +67,10 @@ public:
 
 
 private:
-	std::unique_ptr<GameEye>                    gameEye_ = {};           // !< ゲームアイ
+	std::unique_ptr<GameEye>                    debugEye_ = {};           // !< デバッグアイ
 
+	std::unique_ptr<GameEye> gameEye_ = {}; // !< ゲームカメラ
+	int eyeNumber = 0;
 
 private:
 	Input* pInput_ = nullptr;      // !< 入力
@@ -83,6 +90,11 @@ private: /// オブジェクト
 	//木星
 	std::unique_ptr<Jupiter> jupiter_ = nullptr;
 	//土星
+	std::unique_ptr<Saturn> saturn_ = nullptr;
+	//地球
+	std::unique_ptr<Earth> earth_ = nullptr;
 
+	//プレイヤー
+	std::unique_ptr<Player> player_ = nullptr;
 
 };

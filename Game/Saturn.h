@@ -1,6 +1,6 @@
 #pragma once
 #include "BasePlanet.h"
-class Jupiter : public BasePlanet
+class Saturn : public BasePlanet
 {
 public:
 	//初期化
@@ -11,5 +11,6 @@ public:
 	void Draw() override;
 	//終了
 	void Finalize() override;
+
 };
 

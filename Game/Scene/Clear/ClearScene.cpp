@@ -4,11 +4,11 @@
 
 void ClearScene::Initialize()
 {
-    /// ƒCƒ“ƒXƒ^ƒ“ƒX‚Ìæ“¾
+    /// ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã®å–å¾—
     pInput_ = Input::GetInstance();
     pSceneTransition_ = SceneTransitionManager::GetInstance();
-
-    /// ƒQ[ƒ€ƒAƒC‚Ì‰Šú‰»
+    
+    /// ã‚²ãƒ¼ãƒ ã‚¢ã‚¤ã®åˆæœŸåŒ–
     gameEye_ = std::make_unique<GameEye>();
     gameEye_->SetName("main");
     gameEye_->SetTranslate(Vector3(0, 15.0f, -30.0f));

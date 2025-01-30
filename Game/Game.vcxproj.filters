@@ -19,6 +19,15 @@
     <Filter Include="Scene\Clear">
       <UniqueIdentifier>{49dce8ec-004c-46eb-8b9d-696525df8342}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObject">
+      <UniqueIdentifier>{07cf5123-4df6-4bde-a81c-5ddc05e55159}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObject\Planet">
+      <UniqueIdentifier>{2704ce5c-2fd6-4376-92a3-34cd885e6c5e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObject\Player">
+      <UniqueIdentifier>{f178b8d8-a32d-4bc8-92b8-4f4f7f9623a0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Ohajiki\Ohajiki.cpp">
@@ -38,12 +47,32 @@
       <Filter>Scene\Title</Filter>
     </ClCompile>
     <ClCompile Include="Skydome.cpp" />
-    <ClCompile Include="BasePlanet.cpp" />
-    <ClCompile Include="Solar.cpp" />
-    <ClCompile Include="Mercury.cpp" />
-    <ClCompile Include="Venus.cpp" />
-    <ClCompile Include="Mars.cpp" />
-    <ClCompile Include="Jupiter.cpp" />
+    <ClCompile Include="BasePlanet.cpp">
+      <Filter>GameObject\Planet</Filter>
+    </ClCompile>
+    <ClCompile Include="Jupiter.cpp">
+      <Filter>GameObject\Planet</Filter>
+    </ClCompile>
+    <ClCompile Include="Mars.cpp">
+      <Filter>GameObject\Planet</Filter>
+    </ClCompile>
+    <ClCompile Include="Mercury.cpp">
+      <Filter>GameObject\Planet</Filter>
+    </ClCompile>
+    <ClCompile Include="Saturn.cpp">
+      <Filter>GameObject\Planet</Filter>
+    </ClCompile>
+    <ClCompile Include="Solar.cpp">
+      <Filter>GameObject\Planet</Filter>
+    </ClCompile>
+    <ClCompile Include="Venus.cpp">
+      <Filter>GameObject\Planet</Filter>
+    </ClCompile>
+    <ClCompile Include="Earth.cpp">
+      <Filter>GameObject\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="ImplFollowEye.cpp" />
+    <ClCompile Include="Player.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Ohajiki\Ohajiki.h">
@@ -62,11 +91,31 @@
       <Filter>Scene\Title</Filter>
     </ClInclude>
     <ClInclude Include="Skydome.h" />
-    <ClInclude Include="BasePlanet.h" />
-    <ClInclude Include="Solar.h" />
-    <ClInclude Include="Mercury.h" />
-    <ClInclude Include="Venus.h" />
-    <ClInclude Include="Mars.h" />
-    <ClInclude Include="Jupiter.h" />
+    <ClInclude Include="BasePlanet.h">
+      <Filter>GameObject\Planet</Filter>
+    </ClInclude>
+    <ClInclude Include="Jupiter.h">
+      <Filter>GameObject\Planet</Filter>
+    </ClInclude>
+    <ClInclude Include="Mars.h">
+      <Filter>GameObject\Planet</Filter>
+    </ClInclude>
+    <ClInclude Include="Mercury.h">
+      <Filter>GameObject\Planet</Filter>
+    </ClInclude>
+    <ClInclude Include="Saturn.h">
+      <Filter>GameObject\Planet</Filter>
+    </ClInclude>
+    <ClInclude Include="Solar.h">
+      <Filter>GameObject\Planet</Filter>
+    </ClInclude>
+    <ClInclude Include="Venus.h">
+      <Filter>GameObject\Planet</Filter>
+    </ClInclude>
+    <ClInclude Include="Earth.h">
+      <Filter>GameObject\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="ImplFollowEye.h" />
+    <ClInclude Include="Player.h" />
   </ItemGroup>
 </Project>

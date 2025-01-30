@@ -8,6 +8,7 @@ void Jupiter::Initialize()
 	model_->SetName("Jupiter");
 	//座標の変更
 	model_->SetTranslate({ 11.0f,11.0f,-11.0f });
+	
 }
 
 void Jupiter::Update()
