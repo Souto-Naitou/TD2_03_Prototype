@@ -49,7 +49,15 @@ void GameScene::Initialize()
 	player_->SetEye(gameEye_.get());
 	player_->SetEarth(earth_.get());
 
-
+	/// テキスト
+    text_ = std::make_unique<Text>();
+    text_->Initialize();
+    text_->SetPosition(Vector2(10, 30));
+    text_->SetFontSize(24);
+    text_->SetColorName("Black");
+    text_->SetMaxSize(Vector2(500, 500));
+    text_->SetText("1. Press Tab");
+	text_->SetName("Tutorial text");
 
 }
 
@@ -65,6 +73,7 @@ void GameScene::Finalize()
 	saturn_->Finalize();
 	earth_->Finalize();
 	skydome_->Finalize();
+    text_->Finalize();
 }
 
 void GameScene::Update()
@@ -87,6 +96,9 @@ void GameScene::Update()
 	{
 		pSceneTransition_->ChangeScene("ClearScene", std::make_unique<TransFadeInOut>());
 	}
+
+    //テキストの更新
+    text_->Update();
 
 #ifdef _DEBUG
 	if (pInput_->TriggerKey(DIK_TAB)) {
@@ -144,4 +156,5 @@ void GameScene::Draw2dForeground()
 
 void GameScene::DrawTexts()
 {
+    text_->Draw();
 }

@@ -14,6 +14,8 @@
 #include <Earth.h>
 #include <Player.h>
 #include <ImplFollowEye.h>
+#include <Features/Text/Text.h>
+
 #include <array>
 #include <memory>
 
@@ -100,5 +102,8 @@ private: /// オブジェクト
 
 	//プレイヤー
 	std::unique_ptr<Player> player_ = nullptr;
+
+	// テキスト
+    std::unique_ptr<Text> text_ = nullptr;
 
 };
