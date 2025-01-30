@@ -10,56 +10,60 @@ class ClearScene : public IScene
 {
 public:
     /// <summary>
-    /// ‰Šú‰»
+    /// åˆæœŸåŒ–
     /// </summary>
     void Initialize() override;
 
     /// <summary>
-    /// I—¹
+    /// çµ‚äº†
     /// </summary>
     void Finalize() override;
 
     /// <summary>
-    /// XV
+    /// æ›´æ–°
     /// </summary>
     void Update() override;
 
     /// <summary>
-    /// ”wŒi•`‰æ
+    /// èƒŒæ™¯æç”»
     /// </summary>
     void Draw2dBackGround() override;
 
     /// <summary>
-    /// 3D•`‰æ
+    /// 3Dæç”»
     /// </summary>
     void Draw3d() override;
 
     /// <summary>
-    /// ’†Œi•`‰æ
+    /// ä¸­æ™¯æç”»
     /// </summary>
     void Draw2dMidground() override;
 
     /// <summary>
-    /// 3D’†Œi•`‰æ
+    /// 3Dä¸­æ™¯æç”»
     /// </summary>
     void Draw3dMidground() override;
 
     /// <summary>
-    /// ƒ‰ƒCƒ“•`‰æ
+    /// ãƒ©ã‚¤ãƒ³æç”»
     /// </summary>
     void DrawLine() override;
 
     /// <summary>
-    /// ‘OŒi•`‰æ
+    /// å‰æ™¯æç”»
     /// </summary>
     void Draw2dForeground() override;
 
+    /// <summary>
+    /// ãƒ†ã‚­ã‚¹ãƒˆæç”»
+    /// </summary>
+    void DrawTexts() override;
 
 private:
-    std::unique_ptr<GameEye>                    gameEye_            = {};           // !< ƒQ[ƒ€ƒAƒC
+    std::unique_ptr<GameEye>                    gameEye_            = {};           // !< ã‚²ãƒ¼ãƒ ã‚¢ã‚¤
     
 
 private:
-    Input*                                      pInput_             = nullptr;      // !< “ü—Í
-    SceneTransitionManager*                     pSceneTransition_   = nullptr;      // !< ƒV[ƒ“‘JˆÚ
+    Input*                                      pInput_             = nullptr;      // !< å…¥åŠ›
+    SceneTransitionManager*                     pSceneTransition_   = nullptr;      // !< ã‚·ãƒ¼ãƒ³é·ç§»
 };

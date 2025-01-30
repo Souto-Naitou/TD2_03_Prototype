@@ -53,3 +53,7 @@ void TitleScene::DrawLine()
 void TitleScene::Draw2dForeground()
 {
 }
+
+void TitleScene::DrawTexts()
+{
+}
