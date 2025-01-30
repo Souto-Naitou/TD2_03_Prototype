@@ -62,6 +62,18 @@ void Ohajiki::Draw()
     pObject3dSystem_->PresentDraw();
     pSceneManager_->SceneDraw3d();
 
+    /// 中景スプライトの描画
+    pSpriteSystem_->PresentDraw();
+    pSceneManager_->SceneDraw2dMidground();
+
+    /// 中景3dオブジェクトの描画
+    pObject3dSystem_->PresentDraw();
+    pSceneManager_->SceneDraw3dMidground();
+
+    /// ライン描画
+    pLineSystem_->PresentDraw();
+    pSceneManager_->SceneDrawLine();
+
     /// パーティクル描画
     pParticleSystem_->PresentDraw();
     pParticleManager_->Draw();
@@ -71,5 +83,13 @@ void Ohajiki::Draw()
     pSceneManager_->SceneDraw2dForeground();
 
     pImGuiManager_->EndFrame();
+
+    pDirectX_->CommandExecute();
+
+    /// テキストの描画
+    pTextSystem_->PresentDraw();
+    pSceneManager_->SceneDrawText();
+    pTextSystem_->PostDraw();
+
     pDirectX_->PostDraw();
 }

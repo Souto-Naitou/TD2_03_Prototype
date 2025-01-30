@@ -141,3 +141,7 @@ void GameScene::DrawLine()
 void GameScene::Draw2dForeground()
 {
 }
+
+void GameScene::DrawTexts()
+{
+}
