@@ -1,4 +1,5 @@
 #include "Player.h"
+#include <Features/DeltaTimeManager/DeltaTimeManager.h>
 #include <cassert>
 
 void Player::Initialize()
@@ -11,6 +12,7 @@ void Player::Initialize()
 
 	//変数の初期化
 	velocity_ = {};
+	oldVelocity_ = {};
 
 }
 
@@ -34,6 +36,12 @@ void Player::Update()
 
 }
 
+void Player::PostUpdate()
+{
+	//前フレームの速度保存←これを反射処理の直後にかく必要がある
+	oldVelocity_ = earth_->GetVelocity();
+}
+
 void Player::Draw()
 {
 }
@@ -41,7 +49,10 @@ void Player::Draw()
 void Player::InputCommand()
 {
 	if (pInput_->PushKey(DIK_W)) {
-		velocity_ = implFollowEye_->GetDirection().Normalize() * speed_;
+		//最新速度決定
+		Vector3 newVelocity_ = implFollowEye_->GetDirection().Normalize() * speed_;
+		//速度補完
+		velocity_.Lerp(oldVelocity_, newVelocity_, 0.05f);
 		//earthのVelocityにセット
 		earth_->SetVelocity(velocity_);
 	}

@@ -15,6 +15,7 @@ public:
 
 	//getter
 	const Vector3& GetWorldTranslate() { return model_->GetTranslate(); }
+	const Vector3& GetVelocity() { return velocity_; }
 
 	//setter
 	void SetVelocity(const Vector3& _velocity) { velocity_ = _velocity; }

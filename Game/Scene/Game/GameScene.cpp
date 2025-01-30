@@ -71,6 +71,8 @@ void GameScene::Update()
 {
 	debugEye_->Update();
 	gameEye_->Update();
+	//プレイヤーの更新
+	player_->Update();
 	//オブジェクトの更新
 	skydome_->Update();
 	solar_->Update();
@@ -80,8 +82,8 @@ void GameScene::Update()
 	jupiter_->Update();
 	saturn_->Update();
 	earth_->Update();
-	//プレイヤーの更新
-	player_->Update();
+	//プレイヤーの後更新処理
+	player_->PostUpdate();
 
 	if (pInput_->TriggerKey(DIK_SPACE))
 	{

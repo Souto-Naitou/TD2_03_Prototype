@@ -8,6 +8,7 @@ class Player
 public:
 	void Initialize();
 	void Update();
+	void PostUpdate();
 	void Draw();
 
 	//setter
@@ -26,8 +27,9 @@ private:
 	//速度
 	Vector3 velocity_;
 	//スピード
-	float speed_ = 10.0f;
+	float speed_ = 5.0f;
 
-
+	//前フレームの速度
+	Vector3 oldVelocity_;
 };
 
