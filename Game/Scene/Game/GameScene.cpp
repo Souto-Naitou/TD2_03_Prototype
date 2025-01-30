@@ -52,11 +52,11 @@ void GameScene::Initialize()
 	/// テキスト
     text_ = std::make_unique<Text>();
     text_->Initialize();
-    text_->SetPosition(Vector2(10, 30));
-    text_->SetFontSize(24);
+    text_->SetPosition(Vector2(20, 40));
+    text_->SetFontSize(18);
     text_->SetColorName("Black");
     text_->SetMaxSize(Vector2(500, 500));
-    text_->SetText("1. Press Tab");
+    text_->SetText("Tab\t\t: Change camera\nW\t\t: Flip front\nArrowKey\t: Aim");
 	text_->SetName("Tutorial text");
 
 }
